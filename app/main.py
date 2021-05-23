@@ -13,7 +13,7 @@ def read_root():
 
 
 @app.get("/hostname")
-def read_hostname:
+def read_hostname():
 	return {"hostname":os.uname()}
 
 @app.get("/items/{item_id}")
