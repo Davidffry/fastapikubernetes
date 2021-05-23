@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapiapp-deploy
+spec:
+  selector:
+    matchLabels:
+      app: fastapiapp
+      name: firstFastApiapp
+      language: python
+  imagePullSecrets:
+    name: quayio-secret
+  containers:
+  - name: fastapiapp
+    image: fastapiapp:v1.0
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+    - containerPort: 80

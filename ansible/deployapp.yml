@@ -1,0 +1,4 @@
+- name: Deploy app on kubernetes
+  host: kube-master
+  tasks:
+    
