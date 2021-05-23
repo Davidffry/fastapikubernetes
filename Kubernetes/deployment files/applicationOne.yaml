@@ -3,13 +3,14 @@ kind: Deployment
 metadata:
   name: fastapiapp-deploy
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: fastapiapp
       name: firstFastApiapp
       language: python
   imagePullSecrets:
-    name: quayio-secret
+    name: docker-secret
   containers:
   - name: fastapiapp
     image: fastapiapp:v1.0

@@ -1,4 +1,7 @@
 - name: Deploy app on kubernetes
   host: kube-master
   tasks:
-    
+    - name: create secret
+    - name: create ingress
+    - name: create svc
+    - name: create deployment
