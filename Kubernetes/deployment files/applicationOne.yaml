@@ -12,13 +12,15 @@ spec:
   template:
     metadata:
       labels:
-        app: myapp
+      app: fastapiapp
+      name: firstFastApiapp
+      language: python
     spec:
       imagePullSecrets:
         name: docker-secret
       containers:
       - name: fastapiapp
-        image: fastapiapp:v1.0
+        image: davidauffray/fastapiapp:v1.0
         resources:
           limits:
             memory: "128Mi"
