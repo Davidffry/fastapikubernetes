@@ -20,7 +20,7 @@ spec:
       - name: docker-secret
       containers:
       - name: fastapiapp
-        image: davidauffray/fastapiapp:v1.0
+        image: davidauffray/fastapiapp:latest
         env:
           - name: COLOR
             value: "WhiteSmoke"

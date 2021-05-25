@@ -1,4 +1,3 @@
-apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fastapiapp-deploy
@@ -17,35 +16,10 @@ spec:
         language: python
     spec:
       imagePullSecrets:
-        name: docker-secret
-      containers:
-      - name: fastapiapp
-        image: davidauffray/fastapiapp:v1.0
-        env:
-          - name: COLOR
-            value: apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: fastapiapp-deploy
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: fastapiapp
-      name: firstFastApiapp
-      language: python
-  template:
-    metadata:
-      labels:
-      app: fastapiapp
-      name: firstFastApiapp
-      language: python
-    spec:
-      imagePullSecrets:
       - name: docker-secret
       containers:
       - name: fastapiapp
-        image: davidauffray/fastapiapp:v1.0
+        image: davidauffray/fastapiapp:latest
         env:
           - name: COLOR
             value: "tomato"
