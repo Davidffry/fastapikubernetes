@@ -12,9 +12,9 @@ spec:
   template:
     metadata:
       labels:
-        app: fastapiapp
-        name: firstFastApiapp
-        language: python
+      app: fastapiapp
+      name: firstFastApiapp
+      language: python
     spec:
       imagePullSecrets:
         name: docker-secret
