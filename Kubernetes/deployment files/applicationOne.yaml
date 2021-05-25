@@ -23,7 +23,39 @@ spec:
         image: davidauffray/fastapiapp:v1.0
         env:
           - name: COLOR
+            value: apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapiapp-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fastapiapp
+      name: firstFastApiapp
+      language: python
+  template:
+    metadata:
+      labels:
+      app: fastapiapp
+      name: firstFastApiapp
+      language: python
+    spec:
+      imagePullSecrets:
+      - name: docker-secret
+      containers:
+      - name: fastapiapp
+        image: davidauffray/fastapiapp:v1.0
+        env:
+          - name: COLOR
             value: "tomato"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
         resources:
           limits:
             memory: "128Mi"

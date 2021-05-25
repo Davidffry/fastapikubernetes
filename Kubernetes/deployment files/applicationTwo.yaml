@@ -17,13 +17,13 @@ spec:
       language: python
     spec:
       imagePullSecrets:
-        name: docker-secret
+      - name: docker-secret
       containers:
       - name: fastapiapp
         image: davidauffray/fastapiapp:v1.0
         env:
           - name: COLOR
-            value: "tomato"
+            value: "WhiteSmoke"
         resources:
           limits:
             memory: "128Mi"
